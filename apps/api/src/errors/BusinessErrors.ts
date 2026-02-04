@@ -17,3 +17,19 @@ export class CategoryAlreadyExistsError extends BusinessError {
     public readonly name = 'CategoryAlreadyExistsError';
     public readonly statusCode = 409;
 }
+
+export class CategoryHasProductsError extends BusinessError {
+    public readonly name = 'CategoryHasProductsError';
+    public readonly statusCode = 409;
+}
+
+// Product-specific errors
+export class ProductNotFoundError extends BusinessError {
+    public readonly name = 'ProductNotFoundError';
+    public readonly statusCode = 404;
+}
+
+export class ProductAlreadyExistsError extends BusinessError {
+    public readonly name = 'ProductAlreadyExistsError';
+    public readonly statusCode = 409;
+}
