@@ -5,6 +5,7 @@ import { PrismaPg } from '@prisma/adapter-pg';
 import pg from 'pg';
 import globalErrorHandler from './middlewares/GlobalErrorHandler';
 import createCategoryRouter from './routers/CategoryRouter';
+import createProductRouter from './routers/ProductRouter';
 import { createContainer } from './container/Container';
 import httpLogger from './middlewares/HttpLogger';
 
@@ -21,6 +22,7 @@ app.use(express.json());
 const container = createContainer(prisma);
 
 app.use('/api/categories', createCategoryRouter(container.categoryService));
+app.use('/api/products', createProductRouter(container.productService));
 
 app.use(globalErrorHandler);
 

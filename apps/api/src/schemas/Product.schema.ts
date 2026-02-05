@@ -1,13 +1,14 @@
 import { z } from 'zod';
+import { UnitType } from '../types/enums';
 
-// Schema for creating a product
 export const ProductToCreate = z.object({
     categoryId: z.string().uuid().nullable().optional(),
     name: z.string()
         .min(2, 'Name must have at least 2 characters')
         .max(100, 'Name must not exceed 100 characters'),
+    stock: z.number().min(0, 'Stock must be greater than or equal to 0').default(0),
     minStock: z.number().min(0, 'Min stock must be greater than or equal to 0').default(0),
-    unitType: z.string().nullable().optional(),
+    unitType: z.nativeEnum(UnitType).nullable().optional(),
     costPrice: z.number().min(0, 'Cost price must be greater than or equal to 0'),
     isForSale: z.boolean().optional().default(false),
     status: z.boolean().optional().default(true),
@@ -15,8 +16,6 @@ export const ProductToCreate = z.object({
 
 export type ProductToCreateType = z.infer<typeof ProductToCreate>;
 
-// Schema for updating a product
-// Note: stock is OMITTED - it's managed via inventory adjustments
 export const ProductToUpdate = z.object({
     categoryId: z.string().uuid().nullable().optional(),
     name: z.string()
@@ -24,7 +23,7 @@ export const ProductToUpdate = z.object({
         .max(100, 'Name must not exceed 100 characters')
         .optional(),
     minStock: z.number().min(0, 'Min stock must be greater than or equal to 0').optional(),
-    unitType: z.string().nullable().optional(),
+    unitType: z.nativeEnum(UnitType).nullable().optional(),
     costPrice: z.number().min(0, 'Cost price must be greater than or equal to 0').optional(),
     isForSale: z.boolean().optional(),
     status: z.boolean().optional(),
@@ -32,7 +31,6 @@ export const ProductToUpdate = z.object({
 
 export type ProductToUpdateType = z.infer<typeof ProductToUpdate>;
 
-// Schema for query parameters filtering
 export const ProductFilters = z.object({
     search: z.string().min(1).optional(),
     categoryId: z.string().uuid().optional(),

@@ -1,5 +1,6 @@
 import ICategoryService from '../interfaces/IServices/ICategoryService';
 import ICategoryRepository from '../interfaces/IRepositories/ICategoryRepository';
+import IProductRepository from '../interfaces/IRepositories/IProductRepository';
 import { CategoryToCreateType, CategoryToUpdateType } from '../schemas/Category.schema';
 import {
     CategoryFiltersForService,
@@ -9,11 +10,15 @@ import {
 import {
     CategoryAlreadyExistsError,
     CategoryNotFoundError,
+    CategoryHasProductsError,
 } from '../errors/BusinessErrors';
 import CategoryMapper from '../mappers/CategoryMapper';
 
 export default class CategoryService implements ICategoryService {
-    constructor(private categoryRepository: ICategoryRepository) {}
+    constructor(
+        private categoryRepository: ICategoryRepository,
+        private productRepository: IProductRepository
+    ) {}
 
     async createCategory(data: CategoryToCreateType): Promise<PublicCategory> {
         const existing = await this.categoryRepository.getCategoryByName(data.name);
@@ -61,6 +66,13 @@ export default class CategoryService implements ICategoryService {
         const category = await this.categoryRepository.getCategoryById(id);
         if (!category) {
             throw new CategoryNotFoundError(`Category with ID ${id} not found`);
+        }
+
+        const productCount = await this.productRepository.countByCategoryId(id);
+        if (productCount > 0) {
+            throw new CategoryHasProductsError(
+                `Cannot delete category with ID ${id} because it has associated products`
+            );
         }
 
         await this.categoryRepository.softDeleteCategory(id);

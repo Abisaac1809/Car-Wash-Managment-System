@@ -1,10 +1,12 @@
+import { UnitType } from '../enums';
+
 export type ProductType = {
     id: string;
     categoryId: string | null;
     name: string;
     stock: number;
     minStock: number;
-    unitType: string | null;
+    unitType: UnitType | null;
     costPrice: number;
     isForSale: boolean;
     status: boolean;
@@ -19,7 +21,7 @@ export type PublicProduct = {
     name: string;
     stock: number;
     minStock: number;
-    unitType: string | null;
+    unitType: UnitType | null;
     costPrice: number;
     isForSale: boolean;
     status: boolean;
@@ -30,6 +32,7 @@ export type ProductFiltersForService = {
     categoryId?: string;
     isForSale?: boolean;
     status?: boolean;
+    lowStock?: boolean;
     page: number;
     limit: number;
 };
@@ -39,6 +42,7 @@ export type ProductFiltersForRepository = {
     categoryId?: string;
     isForSale?: boolean;
     status?: boolean;
+    lowStock?: boolean;
     limit: number;
     offset: number;
 };
@@ -48,6 +52,7 @@ export type ProductFiltersForCount = {
     categoryId?: string;
     isForSale?: boolean;
     status?: boolean;
+    lowStock?: boolean;
 };
 
 export type ListOfProducts = {

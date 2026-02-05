@@ -1,4 +1,5 @@
 import { ProductType } from "../types/dtos/Product.dto";
+import { UnitType } from "../types/enums";
 
 export default class Product {
     public readonly id: string;
@@ -6,7 +7,7 @@ export default class Product {
     public name: string;
     public stock: number;
     public minStock: number;
-    public unitType: string | null;
+    public unitType: UnitType | null;
     public costPrice: number;
     public isForSale: boolean;
     public status: boolean;

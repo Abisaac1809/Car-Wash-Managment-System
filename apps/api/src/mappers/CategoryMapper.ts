@@ -6,7 +6,7 @@ export default class CategoryMapper {
         return {
             id: category.id,
             name: category.name,
-            description: category.description,
+            description: category.description ?? null,
             status: category.status,
         };
     }
