@@ -176,15 +176,15 @@ model InventoryAdjustment {
 }
 
 model Service {
-  id              String    @id @default(uuid()) @db.Uuid
-  name            String    @db.VarChar(100)
-  description     String?   @db.Text
-  price           Decimal   @db.Decimal(10, 2)
+  id          String  @id @default(uuid()) @db.Uuid
+  name        String  @db.VarChar(100)
+  description String? @db.Text
+  price       Decimal @db.Decimal(10, 2)
 
-  status          Boolean   @default(true)
-  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamp(6)
-  updatedAt       DateTime  @updatedAt @map("updated_at") @db.Timestamp(6)
-  deletedAt       DateTime? @map("deleted_at") @db.Timestamp(6)
+  status    Boolean   @default(true)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt DateTime  @updatedAt @map("updated_at") @db.Timestamp(6)
+  deletedAt DateTime? @map("deleted_at") @db.Timestamp(6)
 
   // Relations
   orderDetails OrderDetail[]
@@ -235,9 +235,9 @@ model PaymentMethod {
 
 model Order {
   id             String      @id @default(uuid()) @db.Uuid
-  customerId     String?     @map("customer_id") @db.Uuid
-  vehiclePlate   String      @map("vehicle_plate") @db.VarChar(20)
-  vehicleModel   String?     @map("vehicle_model") @db.VarChar(50)
+  customerId     String      @map("customer_id") @db.Uuid
+  vehiclePlate   String?     @map("vehicle_plate") @db.VarChar(20)
+  vehicleModel   String      @map("vehicle_model") @db.VarChar(50)
   status         OrderStatus @default(PENDING)
   totalEstimated Decimal     @map("total_estimated") @db.Decimal(10, 2)
   createdAt      DateTime    @default(now()) @map("created_at") @db.Timestamp(6)
@@ -245,7 +245,7 @@ model Order {
   deletedAt      DateTime?   @map("deleted_at") @db.Timestamp(6)
 
   // Relations
-  customer     Customer?     @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  customer     Customer      @relation(fields: [customerId], references: [id], onDelete: Restrict)
   orderDetails OrderDetail[]
   sale         Sale?
 
