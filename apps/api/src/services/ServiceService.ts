@@ -1,6 +1,6 @@
 import IServiceService from '../interfaces/IServices/IServiceService';
 import IServiceRepository from '../interfaces/IRepositories/IServiceRepository';
-import { ServiceToCreateType, ServiceToUpdateType } from '../schemas/Service.schema';
+import { ServiceToCreateType, ServiceToUpdateType } from '../types/dtos/Service.dto';
 import {
     ServiceFiltersForService,
     ListOfServices,

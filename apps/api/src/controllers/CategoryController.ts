@@ -1,10 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import ICategoryService from '../interfaces/IServices/ICategoryService';
-import { CategoryToCreateType, CategoryToUpdateType } from '../schemas/Category.schema';
-import { CategoryFiltersForService } from '../types/dtos/Category.dto';
+import { CategoryToCreateType, CategoryToUpdateType, CategoryFiltersForService } from '../types/dtos/Category.dto';
 
 export default class CategoryController {
-    constructor(private categoryService: ICategoryService) {}
+    constructor(private categoryService: ICategoryService) { }
 
     create = async (req: Request, res: Response, next: NextFunction) => {
         try {

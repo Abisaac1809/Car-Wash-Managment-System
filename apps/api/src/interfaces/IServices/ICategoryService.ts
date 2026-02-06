@@ -1,4 +1,4 @@
-import { CategoryToCreateType, CategoryToUpdateType } from '../../schemas/Category.schema';
+import { CategoryToCreateType, CategoryToUpdateType } from '../../types/dtos/Category.dto';
 import {
     PublicCategory,
     ListOfCategories,

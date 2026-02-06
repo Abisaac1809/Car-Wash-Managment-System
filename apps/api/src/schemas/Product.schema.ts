@@ -36,6 +36,7 @@ export const ProductFilters = z.object({
     categoryId: z.string().uuid().optional(),
     isForSale: z.coerce.boolean().optional(),
     status: z.coerce.boolean().optional(),
+    lowStock: z.coerce.boolean().optional(),
     page: z.coerce.number().min(1).default(1),
     limit: z.coerce.number().min(1).max(100).default(10),
 });

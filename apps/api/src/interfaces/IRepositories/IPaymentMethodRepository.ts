@@ -1,5 +1,5 @@
 import PaymentMethod from '../../entities/PaymentMethod';
-import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../../schemas/PaymentMethod.schema';
+import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../../types/dtos/PaymentMethod.dto';
 import { PaymentMethodFiltersForRepository, PaymentMethodFiltersForCount } from '../../types/dtos/PaymentMethod.dto';
 
 export default interface IPaymentMethodRepository {

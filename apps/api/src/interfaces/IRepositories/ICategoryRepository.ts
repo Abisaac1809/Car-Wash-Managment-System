@@ -1,5 +1,5 @@
 import Category from '../../entities/Category';
-import { CategoryToCreateType } from '../../schemas/Category.schema';
+import { CategoryToCreateType } from '../../types/dtos/Category.dto';
 import {
     CategoryFiltersForRepository,
     CategoryFiltersForCount,

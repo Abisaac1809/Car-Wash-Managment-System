@@ -1,10 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import IPaymentMethodService from '../interfaces/IServices/IPaymentMethodService';
-import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../schemas/PaymentMethod.schema';
-import { PaymentMethodFiltersForService } from '../types/dtos/PaymentMethod.dto';
+import { PaymentMethodToCreateType, PaymentMethodToUpdateType, PaymentMethodFiltersForService } from '../types/dtos/PaymentMethod.dto';
 
 export default class PaymentMethodController {
-    constructor(private paymentMethodService: IPaymentMethodService) {}
+    constructor(private paymentMethodService: IPaymentMethodService) { }
 
     create = async (req: Request, res: Response, next: NextFunction) => {
         try {

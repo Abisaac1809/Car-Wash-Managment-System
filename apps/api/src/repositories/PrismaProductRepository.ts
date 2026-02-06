@@ -1,7 +1,7 @@
 import { PrismaClient, Prisma } from '../generated/prisma';
 import Product from '../entities/Product';
 import IProductRepository from '../interfaces/IRepositories/IProductRepository';
-import { ProductToCreateType, ProductToUpdateType } from '../schemas/Product.schema';
+import { ProductToCreateType, ProductToUpdateType } from '../types/dtos/Product.dto';
 import { ProductFiltersForRepository, ProductFiltersForCount, RawProduct } from '../types/dtos/Product.dto';
 import { UnitType } from '../types/enums';
 

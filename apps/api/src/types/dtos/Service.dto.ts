@@ -1,3 +1,7 @@
+import { ServiceToCreateType, ServiceToUpdateType, ServiceFiltersType } from '../../schemas/Service.schema';
+
+export type { ServiceToCreateType, ServiceToUpdateType, ServiceFiltersType };
+
 export type PublicService = {
     id: string;
     name: string;
@@ -10,12 +14,7 @@ export type PublicService = {
 };
 
 
-export type ServiceFiltersForService = {
-    search?: string;
-    status?: boolean;
-    page: number;
-    limit: number;
-};
+export type ServiceFiltersForService = ServiceFiltersType;
 
 export type ServiceFiltersForRepository = {
     search?: string;

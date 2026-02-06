@@ -1,6 +1,6 @@
 import IPaymentMethodService from '../interfaces/IServices/IPaymentMethodService';
 import IPaymentMethodRepository from '../interfaces/IRepositories/IPaymentMethodRepository';
-import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../schemas/PaymentMethod.schema';
+import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../types/dtos/PaymentMethod.dto';
 import {
     PaymentMethodFiltersForService,
     ListOfPaymentMethods,

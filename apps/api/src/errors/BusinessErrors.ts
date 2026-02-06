@@ -57,6 +57,31 @@ export class PaymentMethodNotFoundError extends BusinessError {
 }
 
 export class PaymentMethodAlreadyExistsError extends BusinessError {
+
     public readonly name = 'PaymentMethodAlreadyExistsError';
+
     public readonly statusCode = 409;
+
+}
+
+
+
+// Customer-specific errors
+
+export class CustomerNotFoundError extends BusinessError {
+
+    public readonly name = 'CustomerNotFoundError';
+
+    public readonly statusCode = 404;
+
+}
+
+
+
+export class CustomerAlreadyExistsError extends BusinessError {
+
+    public readonly name = 'CustomerAlreadyExistsError';
+
+    public readonly statusCode = 409;
+
 }

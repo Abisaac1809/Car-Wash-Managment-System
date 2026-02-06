@@ -1,5 +1,5 @@
 import Product from '../../entities/Product';
-import { ProductToCreateType, ProductToUpdateType } from '../../schemas/Product.schema';
+import { ProductToCreateType, ProductToUpdateType } from '../../types/dtos/Product.dto';
 import { ProductFiltersForRepository, ProductFiltersForCount } from '../../types/dtos/Product.dto';
 
 export default interface IProductRepository {

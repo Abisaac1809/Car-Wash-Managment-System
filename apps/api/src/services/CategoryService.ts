@@ -1,7 +1,7 @@
 import ICategoryService from '../interfaces/IServices/ICategoryService';
 import ICategoryRepository from '../interfaces/IRepositories/ICategoryRepository';
 import IProductRepository from '../interfaces/IRepositories/IProductRepository';
-import { CategoryToCreateType, CategoryToUpdateType } from '../schemas/Category.schema';
+import { CategoryToCreateType, CategoryToUpdateType } from '../types/dtos/Category.dto';
 import {
     CategoryFiltersForService,
     ListOfCategories,
@@ -18,7 +18,7 @@ export default class CategoryService implements ICategoryService {
     constructor(
         private categoryRepository: ICategoryRepository,
         private productRepository: IProductRepository
-    ) {}
+    ) { }
 
     async createCategory(data: CategoryToCreateType): Promise<PublicCategory> {
         const existing = await this.categoryRepository.getCategoryByName(data.name);
@@ -102,7 +102,7 @@ export default class CategoryService implements ICategoryService {
                 status: filters.status,
             }),
         ]);
-    
+
         const totalPages = Math.ceil(totalRecords / filters.limit);
 
         return {

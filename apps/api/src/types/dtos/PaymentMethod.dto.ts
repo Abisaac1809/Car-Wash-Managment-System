@@ -1,4 +1,7 @@
 import { Currency } from "../enums";
+import { PaymentMethodToCreateType, PaymentMethodToUpdateType, PaymentMethodFiltersType } from '../../schemas/PaymentMethod.schema';
+
+export type { PaymentMethodToCreateType, PaymentMethodToUpdateType, PaymentMethodFiltersType };
 
 export interface PaymentMethodType {
     id: string;
@@ -33,13 +36,7 @@ export interface PublicPaymentMethod {
     updatedAt: Date;
 }
 
-export type PaymentMethodFiltersForService = {
-    search?: string;
-    currency?: Currency;
-    isActive?: boolean;
-    page: number;
-    limit: number;
-};
+export type PaymentMethodFiltersForService = PaymentMethodFiltersType;
 
 export type PaymentMethodFiltersForRepository = {
     search?: string;

@@ -1,4 +1,4 @@
-import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../../schemas/PaymentMethod.schema';
+import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../../types/dtos/PaymentMethod.dto';
 import {
     PaymentMethodFiltersForService,
     ListOfPaymentMethods,

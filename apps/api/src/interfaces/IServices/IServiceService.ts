@@ -1,4 +1,4 @@
-import { ServiceToCreateType, ServiceToUpdateType } from '../../schemas/Service.schema';
+import { ServiceToCreateType, ServiceToUpdateType } from '../../types/dtos/Service.dto';
 import {
     PublicService,
     ListOfServices,

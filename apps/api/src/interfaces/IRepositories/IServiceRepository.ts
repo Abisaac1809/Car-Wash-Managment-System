@@ -1,5 +1,5 @@
 import Service from '../../entities/Service';
-import { ServiceToCreateType, ServiceToUpdateType } from '../../schemas/Service.schema';
+import { ServiceToCreateType, ServiceToUpdateType } from '../../types/dtos/Service.dto';
 import { ServiceFiltersForRepository, ServiceFiltersForCount } from '../../types/dtos/Service.dto';
 
 export default interface IServiceRepository {

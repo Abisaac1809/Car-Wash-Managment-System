@@ -1,3 +1,7 @@
+import { CategoryToCreateType, CategoryToUpdateType, CategoryFiltersType } from '../../schemas/Category.schema';
+
+export type { CategoryToCreateType, CategoryToUpdateType, CategoryFiltersType };
+
 export type CategoryType = {
     id: string;
     name: string;
@@ -15,12 +19,7 @@ export type PublicCategory = {
     status: boolean;
 };
 
-export type CategoryFiltersForService = {
-    search?: string;
-    status?: boolean;
-    page: number;
-    limit: number;
-};
+export type CategoryFiltersForService = CategoryFiltersType;
 
 export type CategoryFiltersForRepository = {
     search?: string;

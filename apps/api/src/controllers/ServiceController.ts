@@ -1,10 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import IServiceService from '../interfaces/IServices/IServiceService';
-import { ServiceToCreateType, ServiceToUpdateType } from '../schemas/Service.schema';
-import { ServiceFiltersForService } from '../types/dtos/Service.dto';
+import { ServiceToCreateType, ServiceToUpdateType, ServiceFiltersForService } from '../types/dtos/Service.dto';
 
 export default class ServiceController {
-    constructor(private serviceService: IServiceService) {}
+    constructor(private serviceService: IServiceService) { }
 
     create = async (req: Request, res: Response, next: NextFunction) => {
         try {

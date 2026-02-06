@@ -1,4 +1,4 @@
-import { ProductToCreateType, ProductToUpdateType } from '../../schemas/Product.schema';
+import { ProductToCreateType, ProductToUpdateType } from '../../types/dtos/Product.dto';
 import { PublicProduct, ProductFiltersForService, ListOfProducts } from '../../types/dtos/Product.dto';
 
 export default interface IProductService {

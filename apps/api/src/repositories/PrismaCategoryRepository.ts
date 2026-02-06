@@ -1,7 +1,7 @@
 import { PrismaClient, Prisma } from '../generated/prisma';
 import Category from '../entities/Category';
 import ICategoryRepository from '../interfaces/IRepositories/ICategoryRepository';
-import { CategoryToCreateType } from '../schemas/Category.schema';
+import { CategoryToCreateType } from '../types/dtos/Category.dto';
 import {
     CategoryFiltersForRepository,
     CategoryFiltersForCount,

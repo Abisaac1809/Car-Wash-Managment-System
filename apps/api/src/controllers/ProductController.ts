@@ -1,10 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import IProductService from '../interfaces/IServices/IProductService';
-import { ProductToCreateType, ProductToUpdateType } from '../schemas/Product.schema';
-import { ProductFiltersForService } from '../types/dtos/Product.dto';
+import { ProductToCreateType, ProductToUpdateType, ProductFiltersForService } from '../types/dtos/Product.dto';
 
 export default class ProductController {
-    constructor(private productService: IProductService) {}
+    constructor(private productService: IProductService) { }
 
     create = async (req: Request, res: Response, next: NextFunction) => {
         try {

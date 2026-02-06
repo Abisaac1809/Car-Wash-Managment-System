@@ -2,7 +2,7 @@ import { PrismaClient, Prisma } from '../generated/prisma';
 import PaymentMethod from '../entities/PaymentMethod';
 import IPaymentMethodRepository from '../interfaces/IRepositories/IPaymentMethodRepository';
 import { PaymentMethodFiltersForRepository, PaymentMethodFiltersForCount } from '../types/dtos/PaymentMethod.dto';
-import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../schemas/PaymentMethod.schema';
+import { PaymentMethodToCreateType, PaymentMethodToUpdateType } from '../types/dtos/PaymentMethod.dto';
 import { Currency } from '../types/enums';
 
 export default class PrismaPaymentMethodRepository implements IPaymentMethodRepository {

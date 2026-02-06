@@ -1,4 +1,7 @@
 import { UnitType } from '../enums';
+import { ProductToCreateType, ProductToUpdateType, ProductFiltersType } from '../../schemas/Product.schema';
+
+export type { ProductToCreateType, ProductToUpdateType, ProductFiltersType };
 
 export type ProductType = {
     id: string;
@@ -43,15 +46,7 @@ export type PublicProduct = {
     status: boolean;
 };
 
-export type ProductFiltersForService = {
-    search?: string;
-    categoryId?: string;
-    isForSale?: boolean;
-    status?: boolean;
-    lowStock?: boolean;
-    page: number;
-    limit: number;
-};
+export type ProductFiltersForService = ProductFiltersType;
 
 export type ProductFiltersForRepository = {
     search?: string;

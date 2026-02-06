@@ -1,8 +1,7 @@
 import { PrismaClient, Prisma } from '../generated/prisma';
 import Service from '../entities/Service';
 import IServiceRepository from '../interfaces/IRepositories/IServiceRepository';
-import { ServiceFiltersForRepository, ServiceFiltersForCount } from '../types/dtos/Service.dto';
-import { ServiceToCreateType, ServiceToUpdateType } from '../schemas/Service.schema';
+import { ServiceFiltersForRepository, ServiceFiltersForCount, ServiceToCreateType, ServiceToUpdateType } from '../types/dtos/Service.dto';
 
 export default class PrismaServiceRepository implements IServiceRepository {
     constructor(private prisma: PrismaClient) { }
